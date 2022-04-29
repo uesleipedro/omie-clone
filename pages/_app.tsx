@@ -4,9 +4,7 @@ import Navbar from '../compnents/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div
-      style={{ margin: 0, padding: 0 }
-      }>
+    <div>
       <Navbar />
       <Component {...pageProps} />
     </div>
