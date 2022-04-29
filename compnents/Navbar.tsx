@@ -3,6 +3,7 @@ import { RiArrowDownSLine } from "react-icons/ri"
 
 import styles from "../styles/Navbar.module.css"
 import logo from "../assets/logo-omie.png"
+import CustomButton from './CustomButton'
 
 const Navbar = () => {
   return <div className={styles.container}>
@@ -33,8 +34,8 @@ const Navbar = () => {
     </ul>
 
     <ul className={styles.list2}>
-      <div><span className={styles.borderTop}></span><li>Falar com Especialista</li></div>
-      <div><span className={styles.borderTop}></span><li>Experimente</li></div>
+      <div><CustomButton name="Falar com Especialista" color="green" /></div>
+      <div><CustomButton name="Experimente" color="blue" /></div>
       <div><span className={styles.borderTop}></span><li>Entrar</li></div>
     </ul>
   </div>
