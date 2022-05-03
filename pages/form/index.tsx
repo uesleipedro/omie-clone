@@ -24,9 +24,11 @@ const Form = () => {
   const [alterados, setAlterados] = useState<string[]>([])
   const [isEditing, setIsEditing] = useState<boolean>(true)
 
+  console.log(data)
+
   useEffect(() => {
     axios.get('https://spacetoday.herokuapp.com/getLaunchs/1')
-      .then((resp) => {
+      .then((resp: any) => {
         setData(resp.data.launch);
       })
   }, [])
@@ -36,35 +38,20 @@ const Form = () => {
   }
 
   const updateFieldChanged = (index: number, e: any) => {
-
-
-    //const field = e.target.name
+    e.preventDefault()
     let newArr: any = [...data];
 
     let campoSendoAlterado = newArr[index]
 
-    campoSendoAlterado.company = e.target.value
+    campoSendoAlterado[e.target.name] = e.target.value
 
-    //let campo = newArr.filter((x: any) => x.company === 'Khrunichev State Research and Production Space Center')
+    setData((prevState: any) => {
+      return prevState.map((item: any, i: number) => {
+        return i === index ? campoSendoAlterado : item
+      })
 
-    newArr.splice(index, 1)
-    newArr.push(campoSendoAlterado)
-    //newArr.splice(newArr.findIndex((e: any) => e.company === 'Khrunichev State Research and Production Space Center'), 1)
-    console.log(newArr)
-    setData(newArr)
-    //campo[0].company = "asdf"
-    //newArr.push(campo[0])
+    })
 
-
-    //campo[0].company = 'asdf'
-    //console.log(campo[0])
-    //newArr[index][`${field}`] = e.target.value
-
-    //console.log(newArr[index][`${field}`], e.target.value)
-    //console.log(newArr)
-    //newArr[index]
-
-    //setData(newArr); * /
   }
 
   return <div style={{ paddingTop: '70px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
@@ -84,13 +71,12 @@ const Form = () => {
           <input
             disabled={isEditing}
             type='text'
-            name='namess'
+            name='company'
             placeholder='Primeiro nome'
-            value={value.company ?? 'void'}
-            onChange={(e) => updateFieldChanged(index, e)}
-          //  onKeyUp={() => setAlterados([...alterados, id])}
+            defaultValue={value.company ?? ''}
+            onBlur={(e) => updateFieldChanged(index, e)}
           />
-          <input type='text' placeholder='Segundo nome' defaultValue={value.missionType ?? 'void'} />
+          <input type='text' placeholder='Segundo nome' defaultValue={value.missionType ?? ''} />
           <input type='button' value='editar' onClick={() => setIsEditing(!isEditing)} />
           <input type='button' value='excluir' />
         </form>
