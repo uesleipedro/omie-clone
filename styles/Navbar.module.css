@@ -19,8 +19,6 @@
   align-items: center;
   list-style: none;
   color: #fff;
-  font-weight: bold;
-  padding-left:15px;
   transition: 0.5s;
 }
 
@@ -34,6 +32,10 @@
   cursor: pointer;
 }
 
+.list > div > li {
+  font-size: .87rem;
+}
+
 .list2{
   height: 100%;
   width: 45%;
@@ -43,14 +45,13 @@
   align-items: center;
   list-style: none;
   color: #fff;
-  font-weight: bold;
-  padding: 0 30px 0 15px;
   transition: 0.5s;
 }
 
 .list2 > div > li{
   transition: 0.3s;
   cursor:pointer;
+  font-size: .87rem;
 }
 
 .list2 > div > li:hover {

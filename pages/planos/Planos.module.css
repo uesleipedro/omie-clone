@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 10px 200px 10px; /* remover o padding bottom*/
+}
+
+.containerCards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+    flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 328px;
+  height: 467px;
+  border-radius: 15px;
+  border: 1px solid #d3d3d3;
+  transition: 0.2s;
+  margin-top: 50px;
+  position: relative;
+  padding: 0 20px 0 20px;
+}
+
+.card:hover {
+  transition: 0.4s;
+  box-shadow: 0px 0px 10px #989898;
+  transform: scale(1.06);
+}
+
+.title{
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.borderTop {
+  position: absolute; 
+  width: 60%;
+  height: 10px;
+  top: 0; 
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+  background-color:  #001e27;
+}
+
+.card:hover .borderTop{
+  transition: 0.2s;
+  background-color: #00E2F4;
+}
+
+.card:hover .title{
+  transition: 0.2s;
+  color: #00E2F4;
+}
+
+.card > p {
+  text-align: center;
+}
+
+.containerPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}  
+.containerPrice > span:nth-child(2) {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+/* TABS */
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tab button {
+  height: 45px;
+  background-color: inherit;
+  float: left;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: 600;
+  color: #001e27;
+  padding: 0 35px 0 35px;
+}
+
+.tab button:hover {
+  border: 0.5px solid #d3d3d3;
+}
+
+.tab button.active {
+  background-color: #5b7cba;
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: none;
+  border-top: none;
+}
+
