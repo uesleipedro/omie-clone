@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <div className={styles.text}>
         <div className={styles.textArea}>
-          <span className='title'>
+          <span className={styles.title}>
             Adquira o mais
             completo sistema de
             gestão empresarial
